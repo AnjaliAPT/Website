@@ -1,0 +1,46 @@
+@import 'main', 'header';
+
+
+/* ========================
+--------------------------------
+Main Content
+--------------------------------*/
+main {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  z-index: 950;
+  margin: 40vh 3em 0em 3em;
+  justify-content: center;
+}
+
+.main-text {
+  line-height: 1.8em;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  background: white;
+  color: black;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-text-p,
+.main-text-head {
+  // background: linear-gradient(to right, $color-blue, $color-white);
+  background: -webkit-linear-gradient(transparent, transparent), url("../images/winter.jpg");
+  background: -o-linear-gradien(transparent, transparent);
+  background: -moz-linear-gradien(transparent, transparent);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.main-text-head {
+  font-weight: 1000;
+  text-decoration: underline;
+}

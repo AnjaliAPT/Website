@@ -1,0 +1,378 @@
+/*------------------------------
+--------------------------------
+Header
+--------------------------------*/
+header {
+  height: 41vh;
+  width: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 800;
+}
+
+.toggle {
+  display: none;
+}
+
+.hed {
+  position: absolute;
+  color: white;
+  left: 37%;
+  top: 22vh;
+  font-size: 20px;
+  z-index: 900;
+  cursor: default;
+}
+
+.logo {
+  position: absolute;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  top: 1vh;
+  left: 0;
+
+  img {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.social-header-box {
+  position: absolute;
+  display: flex;
+  right: 1%;
+  top: 2vh;
+}
+
+.social-header-ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.social-header-a {
+  font-size: 25px;
+  color: white;
+  padding: 5px;
+}
+
+.header-nav-wrap {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  height: 10vh;
+  z-index: 950;
+}
+
+.nav-ul {
+  list-style: none;
+  display: flex;
+  height: 8vh;
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.nav-a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-sub-menu {
+  list-style: none;
+  display: none;
+}
+
+.social-header-a:hover {
+  opacity: 0.6;
+  color: pink;
+}
+
+.social-header-ul li::after {
+  content: '';
+  display: block;
+  font-size: 26px;
+  height: 2px;
+  background: pink;
+  width: 0;
+  transition: width 0.3s;
+}
+
+.social-header-ul li:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.nav-ul li::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: pink;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-ul li:hover::after {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.current a {
+  color: $color-blue;
+}
+
+.nav-a:hover {
+  color: pink;
+  opacity: 0.8;
+}
+
+.nav-active:hover {
+  color: $color-blue;
+  opacity: 1;
+}
+
+.nav-ul .current::after {
+  display: block;
+  height: 2px;
+  background: $color-blue;
+  width: 100%;
+  opacity: 0.8;
+}
+
+
+/* ========================
+--------------------------------
+Mobile Navigation
+--------------------------------*/
+
+.toggle {
+  position: absolute;
+  top: 2vh;
+  left: 5%;
+  z-index: 950;
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.toggle:hover span:nth-child(1) {
+  width: 25px;
+}
+
+.toggle:hover span:nth-child(3) {
+  width: 25px;
+}
+
+.toggle:hover span:nth-child(2) {
+  width: 15px;
+}
+
+
+
+.toggle span {
+  position: relative;
+  width: 15px;
+  height: 3px;
+  background: white;
+  display: block;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 5px;
+
+}
+
+.toggle span:nth-child(1) {
+  transform-origin: left;
+}
+
+.toggle span:nth-child(2) {
+  width: 25px;
+}
+
+.toggle span:nth-child(3) {
+  transform-origin: left;
+}
+
+.toggle .active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.toggle .active span:nth-child(1) {
+  transform: scaleX(0);
+}
+
+.toggle .active span:nth-child(3) {
+  transform: rotate(315deg);
+}
+
+/* ========================
+--------------------------------
+Header Responsive
+--------------------------------*/
+@media only screen and (max-width:1200px) {
+  header {
+    height: 35vh;
+  }
+
+  .logo {
+    height: 25vh;
+  }
+
+  .hed {
+    top: 18vh;
+    font-size: 17px;
+    left: 34.5%;
+
+  }
+
+  .nav-a {
+    font-size: 18px;
+  }
+
+  .social-header-a {
+    font-size: 20px;
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:1000px) {
+  .hed {
+    top: 17vh;
+    font-size: 16px;
+    left: 31%;
+  }
+
+  .logo {
+    top: 0vh;
+  }
+
+  header {
+    height: 34vh;
+  }
+
+  .social-header-a {
+    font-size: 19px;
+    padding: 3px;
+  }
+}
+
+
+
+@media only screen and (max-width:900px) {
+
+
+  .hed {
+    font-size: 15px;
+    top: 13vh;
+    left: 31%;
+  }
+
+  header {
+    height: 30vh;
+  }
+
+  .logo {
+    height: 21vh;
+  }
+}
+
+@media only screen and (max-width:800px) {
+  .hed {
+    top: 13vh;
+    font-size: 13px;
+    left: 31%;
+  }
+
+  header {
+    height: 30vh;
+  }
+}
+
+@media only screen and (max-width:770px) {
+  .header-nav-wrap {
+    display: none;
+  }
+
+  header {
+    height: 28vh;
+  }
+
+  .logo {
+    height: 25vh;
+  }
+
+  .hed {
+    top: 17vh;
+    font-size: 16px;
+    left: 25%;
+
+
+  }
+
+  .toggle {
+    display: block;
+  }
+}
+
+@media only screen and (max-width:600px) {
+
+  header {
+    height: 27vh;
+  }
+
+  .logo {
+    height: 24vh;
+  }
+
+  .hed {
+    top: 17vh;
+    font-size: 14px;
+    left: 18%;
+
+  }
+
+  .social-header-a {
+    font-size: 19px;
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .hed {
+    font-size: 10px;
+    left: 11%;
+  }
+
+  .social-header-a {
+    font-size: 15px;
+    padding: 2px;
+  }
+}
+
+@media only screen and (max-width:300px) {
+  .hed {
+    font-size: 8px;
+    left: 11%;
+  }
+
+  .social-header-a {
+    font-size: 12px;
+    padding: 1px;
+  }
+}
+
+@media only screen and (max-width:250px) {
+  header {
+    width: 250px;
+  }
+}
+
+// ------------------------------------------------------------
